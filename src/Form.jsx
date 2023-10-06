@@ -1,11 +1,14 @@
 import { useState } from "react"
 
-export const Form = () => {
+export const Form = ({addItem}) => {
   
     const [newItemName, setNewItemName] = useState('')
     
     const handleSubmit = (e) => {
         e.preventDefault();
+        if( !newItemName ) return;
+        addItem(newItemName);
+        setNewItemName('')
     }
 
     return (
