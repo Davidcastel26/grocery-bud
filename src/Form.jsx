@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { toast } from "react-toastify";
 
 export const Form = ({addItem}) => {
   
@@ -6,7 +7,12 @@ export const Form = ({addItem}) => {
     
     const handleSubmit = (e) => {
         e.preventDefault();
-        if( !newItemName ) return;
+
+        if( !newItemName ){
+            toast.error('please fill the input')
+            return;
+        };
+
         addItem(newItemName);
         setNewItemName('')
     }
