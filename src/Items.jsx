@@ -1,6 +1,6 @@
 import { SingleItem } from "./SingleItem"
 
-export const Items = ({items, removeItem}) => {
+export const Items = ({items, removeItem, editItem}) => {
   
     return (
         <div className="items">
@@ -10,6 +10,7 @@ export const Items = ({items, removeItem}) => {
                         key={item.id} 
                         item={item}
                         removeItem={removeItem}
+                        editItem={editItem}
                     />
                 })
             }
